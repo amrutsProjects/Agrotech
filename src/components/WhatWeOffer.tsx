@@ -6,10 +6,20 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useState } from "react";
-import { ArrowLeft, Sprout, Satellite, Brain, Package, Shield, CreditCard, Handshake } from "lucide-react";
+import {
+  ArrowLeft,
+  Sprout,
+  Satellite,
+  Brain,
+  Package,
+  Shield,
+  CreditCard,
+  Handshake,
+  Check, // Import the Check icon
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import carbonCreditsImage from "@/assets/carbonCredits.jpg"; 
+import carbonCreditsImage from "@/assets/carbonCredits.jpg"; // Import the image
 
 interface ServiceCard {
   id: string;
@@ -140,16 +150,16 @@ const WhatWeOffer = () => {
               Carbon Credits Made Simple
             </SheetTitle>
           </SheetHeader>
-          {/* This 'prose' class adds nice article styling */}
-          <div className="prose prose-lg max-w-none text-foreground space-y-6">
+          {/* Removed 'prose' to apply custom vibrant styles */}
+          <div className="max-w-none text-foreground space-y-8 py-4">
             <section>
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 What is a Carbon Credit?
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                A carbon credit is a reward given when your farm helps the earth
-                by storing carbon in the soil. Companies buy these credits to
-                balance their pollution. You earn money for keeping your soil
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                A carbon credit is a <strong className="font-bold text-primary">reward given</strong> when your farm helps the earth
+                by <strong className="font-bold text-primary">storing carbon in the soil</strong>. Companies buy these credits to
+                balance their pollution. <strong className="font-bold text-primary">You earn money</strong> for keeping your soil
                 healthy.
               </p>
             </section>
@@ -158,28 +168,50 @@ const WhatWeOffer = () => {
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 How Farming Creates Carbon Credits
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 You can earn carbon credits when your farm captures and stores
                 carbon. This happens when you use regenerative farming and
                 natural, soil-friendly methods.
               </p>
-              <p className="text-muted-foreground leading-relaxed mt-4">
+              <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                 Regenerative farming includes:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-1 mt-2">
-                <li>Using less chemicals</li>
-                <li>Adding organic matter like compost</li>
-                <li>Keeping the soil covered</li>
-                <li>Growing different crops</li>
-                <li>Reducing tilling</li>
-                <li>Planting trees or agroforestry</li>
+              <ul className="list-none p-0 m-0 space-y-3 mt-4 text-lg text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Using less chemicals</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Adding organic matter like compost</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Keeping the soil covered</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Growing different crops</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Reducing tilling</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Planting trees or agroforestry</span>
+                </li>
               </ul>
-              <p className="text-muted-foreground leading-relaxed mt-4">
+              <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                 These practices make soil healthier and increase soil organic
-                carbon. More carbon in soil = more credits = more income.
+                carbon.
+              </p>
+              <p className="text-lg font-semibold text-center text-primary bg-primary/10 p-4 rounded-lg mt-4">
+                More carbon in soil = more credits = more income.
               </p>
             </section>
 
+            {/* --- IMAGE INSERTED HERE --- */}
             <section>
               <img
                 src={carbonCreditsImage}
@@ -187,21 +219,28 @@ const WhatWeOffer = () => {
                 className="w-full h-auto rounded-lg my-4"
               />
             </section>
+            {/* --- END OF IMAGE --- */}
 
             <section>
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 How Rupiya.app Measures Carbon
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Rupiya.app checks your farm's carbon in two ways:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-1 mt-2">
-                <li>Satellite images</li>
-                <li>On-ground soil tests</li>
+              <ul className="list-none p-0 m-0 space-y-3 mt-4 text-lg text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Satellite images</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>On-ground soil tests</span>
+                </li>
               </ul>
-              <p className="text-muted-foreground leading-relaxed mt-4">
-                We track how much carbon your soil gains every year. Only a
-                real increase in carbon gives you money. This keeps
+              <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+                We track how much carbon your soil gains every year. <strong className="font-bold text-primary">Only a
+                real increase in carbon gives you money</strong>. This keeps
                 everything honest and transparent.
               </p>
             </section>
@@ -210,22 +249,28 @@ const WhatWeOffer = () => {
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 How Farmers Earn Money
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                For every 1 tonne of CO2 stored in your soil, you earn extra
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                For every <strong className="font-bold text-primary">1 tonne of CO2 stored</strong> in your soil, you earn extra
                 income.
               </p>
-              <p className="text-muted-foreground leading-relaxed mt-4">
+              <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                 You get:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-1 mt-2">
-                <li>80% of the amount in the same year</li>
-                <li>
-                  20% kept safely as a reserve, paid after 5 years (This
-                  protects you even if your carbon drops someday)
+              <ul className="list-none p-0 m-0 space-y-3 mt-4 text-lg text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span><strong className="font-bold text-primary">80%</strong> of the amount in the same year</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>
+                    <strong className="font-bold text-primary">20%</strong> kept safely as a reserve, paid after 5 years (This
+                    protects you even if your carbon drops someday)
+                  </span>
                 </li>
               </ul>
-              <p className="text-muted-foreground leading-relaxed mt-4">
-                Farmers usually earn ₹2,000-₹5,000 per acre per year,
+              <p className="text-lg text-muted-foreground leading-relaxed mt-4 bg-primary/10 p-4 rounded-lg">
+                Farmers usually earn <strong className="font-bold text-primary whitespace-nowrap">₹2,000-₹5,000 per acre per year</strong>,
                 depending on practices and carbon growth.
               </p>
             </section>
@@ -234,8 +279,8 @@ const WhatWeOffer = () => {
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 Rupiya's Global Partnership
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Rupiya.app works with Carboneg (Europe) - a trusted global
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Rupiya.app works with <strong className="font-bold text-primary">Carboneg (Europe)</strong> - a trusted global
                 carbon program. This ensures high standards, proper
                 verification, and good returns for farmers.
               </p>
@@ -245,13 +290,31 @@ const WhatWeOffer = () => {
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 Why This Benefits Farmers
               </h2>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-1">
-                <li>Extra income without changing your main crop</li>
-                <li>Healthier soil and better yield over time</li>
-                <li>Less money spent on fertilizers</li>
-                <li>More moisture in soil</li>
-                <li>Long-term support from Rupiya experts</li>
-                <li>Easy onboarding and monitoring</li>
+              <ul className="list-none p-0 m-0 space-y-3 mt-4 text-lg text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span><strong className="font-bold text-primary">Extra income</strong> without changing your main crop</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span><strong className="font-bold text-primary">Healthier soil</strong> and better yield over time</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Less money spent on fertilizers</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>More moisture in soil</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Long-term support from Rupiya experts</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Easy onboarding and monitoring</span>
+                </li>
               </ul>
             </section>
 
@@ -259,12 +322,12 @@ const WhatWeOffer = () => {
               <h2 className="text-2xl font-semibold text-primary mb-3">
                 Our Goal
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Rupiya.app aims to bring 50,000+ farmers and 5 lakh hectares
-                under regenerative farming and carbon credit income in the
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Rupiya.app aims to bring <strong className="font-bold text-primary">50,000+ farmers</strong> and <strong className="font-bold text-primary">5 lakh hectares</strong> under
+                regenerative farming and carbon credit income in the
                 next 3 years.
               </p>
-              <p className="text-muted-foreground leading-relaxed mt-4 font-medium">
+              <p className="text-xl font-semibold text-center text-primary bg-primary/10 p-4 rounded-lg mt-6">
                 More farmers → more income → healthier soil → better climate.
               </p>
             </section>
