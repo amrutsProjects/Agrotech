@@ -360,7 +360,7 @@ const VisionSection = () => {
     <section className="bg-gradient-to-b from-background via-green-light/30 to-background py-20">
       <div className="container mx-auto px-6 lg:px-12">
         <img
-          src="./src/assets/residueFree.jpg" // This path is from your original file
+          src="src/assets/residueFree.jpg" // This path is from your original file
           alt="Our vision for a comprehensive financial ecosystem"
           className="w-full md:w-4/5 h-auto mx-auto rounded-lg shadow-lg mb-16"
         />
@@ -374,7 +374,7 @@ const VisionSection = () => {
           </p>
         </div>
           <img
-          src="./src/assets/financial.jpg" // This path is from your original file
+          src="/src/assets/financial.jpg" // This path is from your original file
           alt="Our vision for a comprehensive financial ecosystem"
           className="w-full md:w-4/5 h-auto mx-auto rounded-lg shadow-lg mb-16"
         />
