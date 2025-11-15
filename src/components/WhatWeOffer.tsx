@@ -1,3 +1,10 @@
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useState } from "react";
 import { ArrowLeft, Sprout, Satellite, Brain, Package, Shield, CreditCard, Handshake } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,7 +19,6 @@ interface ServiceCard {
 
 const WhatWeOffer = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
-
   const services: ServiceCard[] = [
     {
       id: "soil-testing",
@@ -101,30 +107,85 @@ const WhatWeOffer = () => {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-500">
       {/* Carbon Credits Card */}
-      <Card
-        id="carbon-credits"
-        className="border-primary/20 shadow-large hover:shadow-xl transition-all duration-300 cursor-pointer bg-gradient-to-br from-primary/5 to-green-medium/30 overflow-hidden group"
-        onClick={() => setSelectedCard("carbon-credits")}
-      >
-        <CardContent className="p-10">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="p-4 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Sprout className="h-10 w-10 text-primary" />
+      <Sheet>
+        <SheetTrigger asChild>
+          <Card
+            id="carbon-credits"
+            className="border-primary/20 shadow-large hover:shadow-xl transition-all duration-300 cursor-pointer bg-gradient-to-br from-primary/5 to-green-medium/30 overflow-hidden group"
+          >
+            <CardContent className="p-10">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Sprout className="h-10 w-10 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-foreground mb-2">
+                      Carbon Credits
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Generate revenue through sustainable farming practices
+                    </p>
+                  </div>
+                </div>
+                <ArrowLeft className="h-6 w-6 text-primary rotate-180 group-hover:translate-x-2 transition-transform" />
               </div>
-              <div>
-                <h3 className="text-3xl font-bold text-foreground mb-2">
-                  Carbon Credits
-                </h3>
-                <p className="text-muted-foreground">
-                  Generate revenue through sustainable farming practices
-                </p>
-              </div>
-            </div>
-            <ArrowLeft className="h-6 w-6 text-primary rotate-180 group-hover:translate-x-2 transition-transform" />
+            </CardContent>
+          </Card>
+        </SheetTrigger>
+        <SheetContent className="sm:max-w-2xl overflow-y-auto">
+          <SheetHeader>
+            <SheetTitle className="text-3xl font-bold mb-4">Carbon Credits</SheetTitle>
+          </SheetHeader>
+          <div className="prose prose-lg max-w-none text-foreground">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">What Are Carbon Credits?</h2>
+            <p className="text-muted-foreground mb-6">
+              Carbon credits are tradable certificates that represent the removal or reduction of one metric ton of carbon dioxide (CO2) 
+              or equivalent greenhouse gases from the atmosphere. Through sustainable agricultural practices, farmers can generate these 
+              credits and participate in global climate action while earning additional income.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-foreground mb-4">How It Works</h2>
+            <p className="text-muted-foreground mb-6">
+              Our platform helps farmers transition to regenerative agricultural practices such as no-till farming, cover cropping, 
+              and efficient fertilizer use. These practices sequester carbon in the soil, and we verify and quantify this carbon 
+              capture using satellite monitoring and AI technology. The verified carbon reduction is then converted into tradable 
+              carbon credits.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-foreground mb-4">Benefits for Farmers</h2>
+            <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-6">
+              <li>Generate additional revenue streams from your existing farmland</li>
+              <li>Improve soil health and long-term farm productivity</li>
+              <li>Access premium markets that value sustainable practices</li>
+              <li>Reduce input costs through optimized resource usage</li>
+              <li>Contribute to global climate change mitigation efforts</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-foreground mb-4">Our Verification Process</h2>
+            <p className="text-muted-foreground mb-6">
+              We use advanced satellite imagery, IoT sensors, and AI algorithms to continuously monitor and verify carbon sequestration 
+              on your farm. Our methodology is certified by international carbon standards, ensuring transparency and credibility in 
+              the carbon market. Farmers receive regular reports on their carbon capture performance and credit generation.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-foreground mb-4">Market Opportunities</h2>
+            <p className="text-muted-foreground mb-6">
+              With increasing global demand for carbon offsets from corporations committed to net-zero targets, carbon credits 
+              generated through agriculture are becoming increasingly valuable. We connect farmers directly with buyers, ensuring 
+              fair pricing and transparent transactions. Our platform handles all the complexity of carbon credit registration, 
+              verification, and trading.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-foreground mb-4">Getting Started</h2>
+            <p className="text-muted-foreground">
+              Join our carbon credit program by registering your farm and implementing recommended sustainable practices. Our 
+              agronomy experts will guide you through the transition, and you can start generating carbon credits within the 
+              first growing season. No upfront costs - we handle the verification and certification process.
+            </p>
           </div>
-        </CardContent>
-      </Card>
+        </SheetContent>
+      </Sheet>
 
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
