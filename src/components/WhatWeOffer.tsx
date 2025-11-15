@@ -21,7 +21,19 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import carbonCreditsImage from "@/assets/carbonCredits.jpg"; // Import the image
+import product1 from "@/assets/products/AgroShakti.png";
+import product2 from "@/assets/products/BeauvShakti.png";
+import product3 from "@/assets/products/CeralShakti.png";
+import product4 from "@/assets/products/CombishieldShakti.png";
+import product5 from "@/assets/products/EARTHWISE.png";
 
+const productImages = [
+  product1,
+  product2,
+  product3,
+  product4,
+  product5,
+];
 // --- DATA FOR SERVICES (ICONS) ---
 // We keep icons and IDs separate from translatable text.
 const serviceDefinitions = [
@@ -176,11 +188,66 @@ const translations = {
       },
       "credit": {
         title: "Farm credit",
-        content: "Flexible farm credit solutions with competitive interest rates and farmer-friendly terms. Quick approval process using alternative credit scoring based on your farm's productivity data. Get the financial support you need for seeds, equipment, or operational expenses.",
+        content: "Get quick, hassle-free credit through trusted banking and fintech partners. Low-paperwork process with fast approval for inputs, irrigation, seeds, and more.",
+        detailedContent: `
+          <p>
+            Many farmers struggle to get quick, hassle-free credit. Rupiya.app makes it simple by <strong class="font-bold text-primary">connecting you with trusted banking and fintech partners</strong> so you can get the right loan at the right time.
+          </p>
+          
+          <strong class="font-semibold text-foreground mt-4 block">What you get:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>Small and medium farm loans</li>
+            <li class="font-medium text-green-600">Low-paperwork process</li>
+            <li class="font-medium text-green-600">Fast approval</li>
+            <li>Digital onboarding</li>
+          </ul>
+          
+          <br/>
+          <strong class="font-semibold text-foreground">Where the credit can help:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>Buying residue-free farming inputs</li>
+            <li>Irrigation improvements</li>
+            <li>Seeds and planting material</li>
+            <li>Fertilizers and nutrition</li>
+            <li>Harvesting and labour</li>
+          </ul>
+
+          <br/>
+          <strong class="font-semibold text-foreground">Why farmers prefer it:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li class="font-medium text-green-600">Quick process</li>
+            <li class="font-medium text-green-600">Trusted banks</li>
+            <li>No hidden steps</li>
+            <li>Easy repayment options</li>
+          </ul>
+        `
       },
       "buyback": {
         title: "Buy-back program",
-        content: "Guaranteed market access through our buy-back program. We ensure fair prices for your produce based on quality standards. Eliminate market uncertainty with pre-agreed contracts, quality-based pricing, and timely payments directly to your bank account.",
+        content: "Guaranteed market access for your residue-free produce. Get pre-agreed contracts, fair transparent pricing, and timely payments. Eliminates all market uncertainty.",
+        detailedContent: `
+          <p>
+            Stop worrying about where to sell your harvest or if you'll get a fair price. Our Buy-Back Program gives you <strong class="font-bold text-primary">guaranteed market access</strong> and rewards you for growing high-quality, residue-free produce.
+          </p>
+          
+          <strong class="font-semibold text-foreground mt-4 block">What you get:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>Pre-agreed contracts before the season</li>
+            <li>Clear quality standards for your produce</li>
+            <li><strong class="font-medium text-primary">Guaranteed purchase</strong> of produce that meets standards</li>
+            <li>Direct farm-gate pickup scheduling</li>
+          </ul>
+          
+          <br/>
+          <strong class="font-semibold text-foreground">Why farmers love it:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li class="font-medium text-green-600">Eliminates market uncertainty</li>
+            <li class="font-medium text-green-600">Fair and transparent pricing</li>
+            <li class="font-medium text-green-600">Timely payments directly to your account</li>
+            <li class="font-medium text-green-600">Rewards for high-quality, residue-free farming</li>
+            <li>No need to deal with middlemen</li>
+          </ul>
+        `
       },
     },
     sheetContent: {
@@ -324,8 +391,8 @@ const translations = {
         `
       },
       "inputs": {
-        title: "35 अवशेष-मुक्त इनपुट",
-        content: "उर्वरकों, कीटनाशकों और वृद्धि बढ़ाने वाले 35+ प्रमाणित जैविक और अवशेष-मुक्त कृषि इनपुट तक पहुंच। सभी उत्पादों का कड़ाई से परीक्षण किया जाता है और सुरक्षित और टिकाऊ कृषि पद्धतियों को सुनिश्चित करते हुए अंतरराष्ट्रीय जैविक मानकों को पूरा करने के लिए प्रमाणित किया जाता है।",
+        title: "25 अवशेष-मुक्त इनपुट",
+        content: "उर्वरकों, कीटनाशकों और वृद्धि बढ़ाने वाले 25+ प्रमाणित जैविक और अवशेष-मुक्त कृषि इनपुट तक पहुंच। सभी उत्पादों का कड़ाई से परीक्षण किया जाता है और सुरक्षित और टिकाऊ कृषि पद्धतियों को सुनिश्चित करते हुए अंतरराष्ट्रीय जैविक मानकों को पूरा करने के लिए प्रमाणित किया जाता है।",
       },
       "insurance": {
         title: "पैरामीट्रिक बीमा",
@@ -367,11 +434,66 @@ const translations = {
       },
       "credit": {
         title: "कृषि ऋण",
-        content: "प्रतिस्पर्धी ब्याज दरों और किसान-अनुकूल शर्तों के साथ लचीला कृषि ऋण समाधान। आपके खेत के उत्पादकता डेटा के आधार पर वैकल्पिक क्रेडिट स्कोरिंग का उपयोग करके त्वरित अनुमोदन प्रक्रिया। बीज, उपकरण, या परिचालन खर्चों के लिए आपको आवश्यक वित्तीय सहायता प्राप्त करें।",
+        content: "विश्वसनीय बैंकिंग और फिनटेक भागीदारों के माध्यम से त्वरित, परेशानी मुक्त ऋण प्राप्त करें। इनपुट, सिंचाई, बीज, और अधिक के लिए कम कागजी कार्रवाई वाली प्रक्रिया और तेजी से मंजूरी।",
+        detailedContent: `
+          <p>
+            कई किसानों को त्वरित, परेशानी मुक्त ऋण प्राप्त करने के लिए संघर्ष करना पड़ता है। Rupiya.app <strong class="font-bold text-primary">आपको विश्वसनीय बैंकिंग और फिनटेक भागीदारों से जोड़कर</strong> इसे सरल बनाता है ताकि आप सही समय पर सही ऋण प्राप्त कर सकें।
+          </p>
+          
+          <strong class="font-semibold text-foreground mt-4 block">आपको क्या मिलता है:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>छोटे और मध्यम कृषि ऋण</li>
+            <li class="font-medium text-green-600">कम कागजी कार्रवाई वाली प्रक्रिया</li>
+            <li class="font-medium text-green-600">तेजी से मंजूरी</li>
+            <li>डिजिटल ऑनबोर्डिंग</li>
+          </ul>
+          
+          <br/>
+          <strong class="font-semibold text-foreground">यह ऋण कहाँ मदद कर सकता है:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>अवशेष-मुक्त खेती इनपुट खरीदना</li>
+            <li>सिंचाई में सुधार</li>
+            <li>बीज और रोपण सामग्री</li>
+            <li>उर्वरक और पोषण</li>
+            <li>कटाई और श्रम</li>
+          </ul>
+
+          <br/>
+          <strong class="font-semibold text-foreground">किसान इसे क्यों पसंद करते हैं:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li class="font-medium text-green-600">त्वरित प्रक्रिया</li>
+            <li class="font-medium text-green-600">विश्वसनीय बैंक</li>
+            <li>कोई छिपा हुआ कदम नहीं</li>
+            <li>आसान पुनर्भुगतान विकल्प</li>
+          </ul>
+        `
       },
       "buyback": {
         title: "बाय-बैक प्रोग्राम",
-        content: "हमारे बाय-बैक प्रोग्राम के माध्यम से गारंटीकृत बाजार पहुंच। हम गुणवत्ता मानकों के आधार पर आपकी उपज के लिए उचित मूल्य सुनिश्चित करते हैं। पूर्व-सहमत अनुबंधों, गुणवत्ता-आधारित मूल्य निर्धारण और सीधे आपके बैंक खाते में समय पर भुगतान के साथ बाजार की अनिश्चितता को समाप्त करें।",
+        content: "आपकी अवशेष-मुक्त उपज के लिए गारंटीकृत बाजार पहुंच। पूर्व-सहमत अनुबंध, उचित पारदर्शी मूल्य निर्धारण और समय पर भुगतान प्राप्त करें। बाजार की सभी अनिश्चितता को समाप्त करता है।",
+        detailedContent: `
+          <p>
+            अपनी फसल कहाँ बेचनी है या आपको उचित मूल्य मिलेगा या नहीं, इसकी चिंता करना छोड़ दें। हमारा बाय-बैक प्रोग्राम आपको <strong class="font-bold text-primary">गारंटीकृत बाजार पहुंच</strong> देता है और आपको उच्च-गुणवत्ता, अवशेष-मुक्त उपज उगाने के लिए पुरस्कृत करता है।
+          </p>
+          
+          <strong class="font-semibold text-foreground mt-4 block">आपको क्या मिलता है:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>मौसम से पहले पूर्व-सहमत अनुबंध</li>
+            <li>आपकी उपज के लिए स्पष्ट गुणवत्ता मानक</li>
+            <li>मानकों को पूरा करने वाली उपज की <strong class="font-medium text-primary">गारंटीकृत खरीद</strong></li>
+            <li>खेत से सीधे पिकअप शेड्यूलिंग</li>
+          </ul>
+          
+          <br/>
+          <strong class="font-semibold text-foreground">किसान इसे क्यों पसंद करते हैं:</strong>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li class="font-medium text-green-600">बाजार की अनिश्चितता को समाप्त करता है</li>
+            <li class="font-medium text-green-600">निष्पक्ष और पारदर्शी मूल्य निर्धारण</li>
+            <li class="font-medium text-green-600">सीधे आपके खाते में समय पर भुगतान</li>
+            <li class="font-medium text-green-600">उच्च-गुणवत्ता, अवशेष-मुक्त खेती के लिए पुरस्कार</li>
+            <li>बिचौलियों से निपटने की जरूरत नहीं</li>
+          </ul>
+        `
       },
     },
     sheetContent: {
@@ -459,12 +581,31 @@ const WhatWeOffer = () => {
                 {selectedServiceText.title}
               </h2>
             </div>
-            <div
-              className="text-lg text-muted-foreground leading-relaxed max-w-4xl space-y-4"
-              dangerouslySetInnerHTML={{
-                __html: (selectedServiceText as any).detailedContent || selectedServiceText.content,
-              }}
-            />
+            {selectedCard === "inputs" ? (
+              // IF 'inputs' is selected, show this grid
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-4">
+                {productImages.map((src, index) => (
+                  <div 
+                    key={index} 
+                    className="aspect-square rounded-lg overflow-hidden shadow-md bg-gray-100"
+                  >
+                    <img
+                      src={src}
+                      alt={`Product ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              // ELSE, show the normal text content
+              <div
+                className="text-lg text-muted-foreground leading-relaxed max-w-4xl space-y-4"
+                dangerouslySetInnerHTML={{
+                  __html: (selectedServiceText as any).detailedContent || selectedServiceText.content,
+                }}
+              />
+            )}
           </CardContent>
         </Card>
       </div>
