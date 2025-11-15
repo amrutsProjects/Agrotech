@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 140 20% 98%;
+    --foreground: 150 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 25% 12%;
+
+    /* Vibrant green primary */
+    --primary: 145 60% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Rich green accents */
+    --secondary: 142 35% 88%;
+    --secondary-foreground: 150 25% 12%;
+
+    --muted: 140 25% 94%;
+    --muted-foreground: 150 15% 40%;
+
+    /* Fresh green accent */
+    --accent: 145 50% 82%;
+    --accent-foreground: 150 25% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 142 25% 85%;
+    --input: 142 25% 85%;
+    --ring: 145 60% 40%;
+
+    --radius: 1rem;
+
+    /* Rich green tones */
+    --green-light: 142 40% 92%;
+    --green-medium: 145 50% 75%;
+    --green-accent: 145 65% 45%;
+    
+    /* Soft shadows with green tint */
+    --shadow-soft: 0 2px 8px -2px hsl(145 40% 50% / 0.18);
+    --shadow-medium: 0 4px 16px -4px hsl(145 40% 40% / 0.25);
+    --shadow-large: 0 8px 32px -8px hsl(145 40% 35% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 150 20% 6%;
+    --foreground: 140 25% 92%;
+
+    --card: 150 18% 9%;
+    --card-foreground: 140 25% 92%;
+
+    --popover: 150 18% 9%;
+    --popover-foreground: 140 25% 92%;
+
+    --primary: 145 55% 55%;
+    --primary-foreground: 150 20% 6%;
+
+    --secondary: 150 20% 14%;
+    --secondary-foreground: 140 25% 92%;
+
+    --muted: 150 15% 16%;
+    --muted-foreground: 140 20% 65%;
+
+    --accent: 145 45% 22%;
+    --accent-foreground: 140 25% 92%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 140 25% 92%;
+
+    --border: 150 18% 18%;
+    --input: 150 18% 18%;
+    --ring: 145 55% 55%;
+
+    /* Rich green tones for dark mode */
+    --green-light: 145 30% 15%;
+    --green-medium: 145 40% 25%;
+    --green-accent: 145 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: url('./assets/farming-pattern-light.png');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image: url('./assets/farming-pattern-dark.png');
+  }
+}
